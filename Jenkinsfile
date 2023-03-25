@@ -9,8 +9,8 @@ pipeline {
  stages {
   stage ("deploy-on-doc-con"){
     steps {
-	  sh "docker run -itdp 86:80 --name server httpd"
-	  sh "cp /mnt/newhttpd/index.html server:/usr/local/apache2/htdocs"
+	  sh "docker run -itdp 87:80 --name server1 httpd"
+	  sh "cp /mnt/newhttpd/index.html server1:/usr/local/apache2/htdocs"
 	}
     }
   }
