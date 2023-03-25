@@ -2,15 +2,15 @@ pipeline {
   agent {
    label {
       label "built-in"
-	  customWorkspace "/mnt/newhttpd"
+	  customWorkspace "/mnt/project"
         }
 	}
 
  stages {
   stage ("deploy-on-doc-con"){
     steps {
-	  sh "docker run -itdp 88:80 --name server11 httpd"
-	  sh "cp /mnt/newhttpd/index.html server11:/usr/local/apache2/htdocs"
+	  sh "docker run -itdp 85:80 --name server10 httpd"
+	  sh "cp /mnt/project/index.html server10:/usr/local/apache2/htdocs"
 	}
     }
   }
